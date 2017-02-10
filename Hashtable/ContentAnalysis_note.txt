@@ -1,12 +1,21 @@
-In most large collections of written language, the frequency of a given word in that collection is inversely proportional to its rank in the words. That is to say that the second most common word appears about half as often as the most common word, the third most common word appears about a third as often as the most common word and so on. 
+In most large collections of written language, the frequency of a given word in that collection is inversely proportional
+to its rank in the words. That is to say that the second most common word appears about half as often as the most common 
+word, the third most common word appears about a third as often as the most common word and so on. 
 
-This is known as Zipf’s law. You can read more at https://en.wikipedia.org/wiki/Zipf%27s_law 
+This is known as Zipfâ€™s law. You can read more at https://en.wikipedia.org/wiki/Zipf%27s_law 
 
-If we count the number of occurrences of each word in such a collection, we can use just the number of occurrences to determine the approximate rank of each word. Taking the number of
- occurrences of the most common word to be max and the relationship described earlier, we can assume that any word that appears at least max/100 times appears in the top 100 words and is therefore common. The same can be applied as max/1000 times for the next 900 words, rounding out the top 1000 words, considered to be uncommon. All words that appear less than max/1000 times are considered to be rare. In this prac we have been implementing hash tables and so we will use one here to facilitate a frequency analysis on a given text file.
+If we count the number of occurrences of each word in such a collection, we can use just the number of occurrences to 
+determine the approximate rank of each word. Taking the number of occurrences of the most common word to be max and the 
+relationship described earlier, we can assume that any word that appears at least max/100 times appears in the top 100 words
+and is therefore common. The same can be applied as max/1000 times for the next 900 words, rounding out the top 1000 words, 
+considered to be uncommon. All words that appear less than max/1000 times are considered to be rare. In this prac we have been 
+implementing hash tables and so we will use one here to facilitate a frequency analysis on a given text file.
 Functions:
-1. wordRank -  Count the number of each word in the texts.  Use these occurrence counts to construct a table which can be used to look up whether a given word is common, uncommon or rare within written English.
 
-2. wordPercent - Use another text files, , analyse the percentage of common, uncommon and rare words. If a word is not found in the table, consider it misspelled. Print the percentage of common, uncommon, rare and misspelled words for the given text.
+1. wordRank -  Count the number of each word in the texts.  Use these occurrence counts to construct a table which can be used
+to look up whether a given word is common, uncommon or rare within written English.
+
+2. wordPercent - Use another text files, , analyse the percentage of common, uncommon and rare words. If a word is not found 
+in the table, consider it misspelled. Print the percentage of common, uncommon, rare and misspelled words for the given text.
 
 3. deleteKey - This function is to take key as input and then deletes the entry corresponding to that key.

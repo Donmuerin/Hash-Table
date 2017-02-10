@@ -58,7 +58,6 @@ def find_max(hash_table):
             if bla is not None:
                 num = hash_table[bla]
                 if num is not None:
-                    #print(num)
                     if num > count:
                         count = num
         return count
@@ -106,9 +105,7 @@ def another_file(hash_table):
                 for v in hash_table:# bei compare
                     if v is not None:
                         if j == v:
-                            #print(j)
                             num = hash_table[v]
-                            #print(num)
                             a[j] = num
         for j in a:
             if a[j] != 'Common' and a[j] != 'uncommon' and a[j] != 'rare':
@@ -210,7 +207,7 @@ class QuadProb:
             elif self.array[pos][0] == key:
                 self.array[pos]=(key,data)
                 return
-            else:#As from the LN, we know that it is +1,+4,+9....
+            else:#+1,+4,+9....
                 newPos += 1
                 pos = (pos+newPos*newPos)%self.table_size
         self.rehash(self.table_size*100+1)
@@ -229,8 +226,7 @@ class QuadProb:
                 return None
             elif self.array[pos][0] == key:
                 return self.array[pos][1]
-            else:#technically I need to write pos+(self.collision**2)
-                #But I will check 1 by 1 if there has different key
+            else:
                 newPos += 1
                 pos = (pos+newPos*newPos)%self.table_size
         raise KeyError(key)
@@ -275,12 +271,10 @@ class QuadProb:
             raise ValueError("Size cannot less than 1")
         self.b = self.b
         copy = QuadProb(size,self.b)
-        #print(self.array)
         for i in range(len(self.array)):
             if self.array[i] is not None:
                 copy[self.array[i][0]]=self.array[i][1]
         self.table_size = size
-        #self.resize += 1
         self.array = copy.array
         
     def delete(self,key):
@@ -296,10 +290,6 @@ class QuadProb:
             elif self.array[pos][0] == key:
                 item = self.array[pos]
                 self.array = [i for i in self.array if i != item]
-                #so that the delete item is what the previous collision happened
-                #the key will placed at that spot
-                #to rehash all the key
-                #based on the concept of LN instead of swift things
                 self.rehash(self.table_size)
                 return
             else:

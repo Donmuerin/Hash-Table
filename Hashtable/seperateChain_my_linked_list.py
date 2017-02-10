@@ -1,4 +1,3 @@
-#Note: Almost all of the functions are originally belongs to Lecture Note and the Live coding.
 class Node:
     """
     :pre: None
@@ -45,14 +44,6 @@ class Node:
         :desc: a get new next function
         """
         self.next = newnext
-
-'''
-def print_structure(node):
-    while node is not None:
-        print(node,end=' ')
-        node = node.next
-    print()
-'''
 
 class List:
     def __init__(self):
@@ -116,23 +107,7 @@ class List:
         for _ in range(index):
             node = node.next
         return node
-    '''
-    def add(self, item):
-        temp = self.head
-        self.head = Node(item)
-        self.head.next = temp
-
-    def append(self,item):
-        current = self.head
-        if current:
-            while current.get_next()!=None:
-                current = current.get_next()
-            current.set_next(Node(item))
-        else:
-            self.head = Node(item)
-        self.count += 1
-    '''
-
+   
     def insert(self, index, item):
         """
         :pre: index, item

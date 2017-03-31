@@ -293,7 +293,8 @@ class QuadProb:
                 self.rehash(self.table_size)
                 return
             else:
-                pos = (pos+1)%self.table_size
+                newPos += 1
+                pos = (pos+newPos*newPos)%self.table_size
         raise KeyError("The key is not exist!")
     
     def __iter__(self):
